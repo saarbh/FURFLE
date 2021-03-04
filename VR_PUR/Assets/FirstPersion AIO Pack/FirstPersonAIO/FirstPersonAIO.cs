@@ -284,8 +284,11 @@ public class FirstPersonAIO : MonoBehaviour {
             if(autoCrosshair){
                 Image crossHair = new GameObject("Crosshair").AddComponent<Image>();
                 crossHair.sprite = Crosshair;
-                crossHair.rectTransform.sizeDelta = new Vector2(25,25);
+                crossHair.rectTransform.sizeDelta = new Vector2(5,5);
                 crossHair.transform.SetParent(canvas.transform);
+                var tempColor = crossHair.color;
+                tempColor.a = 0.5f;
+                crossHair.color = tempColor;
                 crossHair.transform.position = Vector3.zero;
             }
 
